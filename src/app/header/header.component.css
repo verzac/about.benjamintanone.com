@@ -1,3 +1,11 @@
 .nav-item {
-    background-color: #00ff00
+    font-size: 14px;
+    margin-left: 22px;
+    margin-right: 22px;
+}
+
+.nav-header {
+    background-color: #fafafa;
+    margin-left: 22px;
+    margin-right: 22px;
 }
