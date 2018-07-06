@@ -1,8 +1,10 @@
 <div class="nav-header" fxLayout="row" fxLayout.xs="column">
-  <div fxLayout fxLayout.xs="column" fxLayoutAlign="start" fxLayoutGap="22px" fxLayoutGap.xs="0">
+  <!--icon-->
+  <div class="header-icon-container" fxLayout fxLayout.xs="column" fxLayoutAlign="start">
     <img class="header-icon" src="/assets/bt-logo.png">
   </div>
-  <div fxLayout fxLayout.xs="column" fxFlex="100%" fxLayoutAlign="end" fxLayoutGap.xs="0">
+  <!--main nav-->
+  <div fxLayout fxLayout.xs="column" fxFlex="100%" fxLayoutAlign="end" fxLayoutGap="0" fxHide.xs="true">
     <div class="nav-item">
       <h1>Home</h1>
     </div>
@@ -11,6 +13,17 @@
     </div>
     <div class="nav-item">
       <h1>Portfolio</h1>
+    </div>
+  </div>
+  <!--mobile nav-->
+  <div fxLayout="column" class="mobile-nav" fxFlex="100%" fxHide="true" fxHide.xs="false" fxLayoutAlign="center">
+    <div fxLayout="column" fxLayoutAlign="center">
+      <img (click)="toggleMenu()" src="/assets/material-menu.svg"/>
+      <div class="mobile-nav-subtitle">menu</div>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center" [@collapse]="collapse">
+      <h1 class="nav-item">Hello there!</h1>
+      <h1 class="nav-item">Look at me!</h1>
     </div>
   </div>
 </div>

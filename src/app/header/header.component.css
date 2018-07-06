@@ -13,6 +13,11 @@
     padding-bottom: 22px;
 }
 
+.mobile-nav-subtitle {
+    text-align: center;
+    font-size: 2em;
+}
+
 img.header-icon {
     display: block;
     margin-left: auto;
@@ -20,4 +25,8 @@ img.header-icon {
     max-width: 5em;
     max-height: 5em;
     align-content: center;
+}
+
+.mobile-nav {
+    padding-top: 22px;
 }
