@@ -31,14 +31,25 @@ import {
 export class HeaderComponent implements OnInit {
   show: boolean;
   collapse: string;
+  navItems: NavItems[];
   constructor() { }
 
   ngOnInit() {
     this.collapse = 'inactive';
+    this.navItems = null;
+  }
+
+  getNavItems() {
+    return []
+  }
+
+  toggleCollapse(collapse): string {
+    collapse = collapse == 'active' ? 'inactive': 'active';
+    return collapse;
   }
 
   toggleMenu() {
-    this.collapse = this.collapse == 'active' ? 'inactive': 'active';
+    this.collapse = this.toggleCollapse(this.collapse);
   }
 
 }

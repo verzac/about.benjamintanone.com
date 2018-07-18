@@ -17,9 +17,8 @@
   </div>
   <!--mobile nav-->
   <div fxLayout="column" class="mobile-nav" fxFlex="100%" fxHide="true" fxHide.xs="false" fxLayoutAlign="center">
-    <div fxLayout="column" fxLayoutAlign="center">
-      <img (click)="toggleMenu()" src="/assets/material-menu.svg"/>
-      <div class="mobile-nav-subtitle">menu</div>
+    <div fxLayout="column" fxLayoutAlign="center" (click)="toggleMenu()">
+        <img class="mobile-nav-activate" src="/assets/material-menu.svg"/>
     </div>
     <div fxLayout="column" fxLayoutAlign="center" [@collapse]="collapse">
       <h1 class="nav-item">Hello there!</h1>
