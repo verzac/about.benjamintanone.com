@@ -8,12 +8,14 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutesModule } from './app.routes';
+import { AboutmeComponent } from './aboutme/aboutme.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    AboutmeComponent
   ],
   imports: [
     BrowserModule,

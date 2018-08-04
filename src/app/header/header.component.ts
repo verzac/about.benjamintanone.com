@@ -6,6 +6,7 @@ import {
   animate,
   transition
  } from '@angular/animations';
+import { SiteNavService } from '../common/service/sitenav.service';
 
 @Component({
   selector: 'app-header',
@@ -32,11 +33,11 @@ export class HeaderComponent implements OnInit {
   show: boolean;
   collapse: string;
   navItems: NavItems[];
-  constructor() { }
+  constructor(private sitenavService: SiteNavService) { }
 
   ngOnInit() {
     this.collapse = 'inactive';
-    this.navItems = null;
+    this.navItems = this.sitenavService.getNavItems();
   }
 
   getNavItems() {

@@ -5,26 +5,23 @@
   </div>
   <!--main nav-->
   <div fxLayout fxLayout.xs="column" fxFlex="100%" fxLayoutAlign="end" fxLayoutGap="0" fxHide.xs="true">
-    <div class="nav-item">
-      <h1>Home</h1>
-    </div>
-    <div class="nav-item">
-      <h1>About Me</h1>
-    </div>
-    <div class="nav-item">
-      <h1>Portfolio</h1>
+    <div class="nav-item" *ngFor="let item of navItems">
+      <a routerLink="{{ item.href }}" routerLinkActive="active">
+        <h1>{{ item.name }}</h1>
+      </a>
     </div>
   </div>
   <!--mobile nav-->
   <div fxLayout="column" class="mobile-nav" fxFlex="100%" fxHide="true" fxHide.xs="false" fxLayoutAlign="center">
     <div fxLayout="column" fxLayoutAlign="center" (click)="toggleMenu()">
-        <img class="mobile-nav-activate" src="/assets/material-menu.svg"/>
+      <img class="mobile-nav-activate" src="/assets/material-menu.svg" />
     </div>
     <div fxLayout="column" fxLayoutAlign="center" [@collapse]="collapse">
-      <h1 class="nav-item">Hello there!</h1>
-      <h1 class="nav-item">Look at me!</h1>
+      <div class="nav-item" *ngFor="let item of navItems">
+        <a routerLink="{{ item.href }}" routerLinkActive="active">
+          <h1>{{ item.name }}</h1>
+        </a>
+      </div>
     </div>
   </div>
 </div>
-
-

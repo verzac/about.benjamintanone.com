@@ -11,3 +11,16 @@ h1, .subtitle {
 .title {
     font-size: 5em;
 }
+
+button {
+    
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: gray;
+}

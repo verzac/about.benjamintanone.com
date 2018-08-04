@@ -3,3 +3,12 @@
     height: 100%;
     margin: auto;
 }
+
+
+.main-content {
+    padding-top: 60px;
+}
+
+header {
+    background-color: white;
+}
