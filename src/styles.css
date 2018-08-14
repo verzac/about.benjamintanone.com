@@ -12,15 +12,39 @@ h1, .subtitle {
     font-size: 5em;
 }
 
-button {
-    
-}
-
 a {
     text-decoration: none;
+    color: gray;
+    transition: all 0.5s;
+}
+
+a:hover, a.active {
     color: black;
 }
 
-a:hover {
-    color: gray;
+/*buttons*/
+button {
+    outline: none;
+}
+
+button.primary {
+    border: 1.5px solid black;
+    padding: 11px;
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
+button.primary:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+button.primary::after {
+    content: " >>";
 }
