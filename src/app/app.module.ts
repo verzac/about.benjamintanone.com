@@ -9,13 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutesModule } from './app.routes';
 import { AboutmeComponent } from './aboutme/aboutme.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    AboutmeComponent
+    AboutmeComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,

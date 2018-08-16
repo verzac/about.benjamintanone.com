@@ -2,6 +2,8 @@
 body, html {
     font-family: 'Montserrat', sans-serif;
     height: 100%;
+    text-align: center;
+    font-size: 18px;
 }
 
 h1, .subtitle {
@@ -10,6 +12,10 @@ h1, .subtitle {
 
 .title {
     font-size: 5em;
+}
+
+h2 {
+    font-size: 1.2em;
 }
 
 a {
@@ -47,4 +53,14 @@ button.primary:hover {
 
 button.primary::after {
     content: " >>";
+}
+
+img.circle {
+    border: 2px solid gray;
+    border-radius: 50%;
+}
+
+img.small {
+    height: 64px;
+    width: 64px;
 }

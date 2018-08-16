@@ -1,3 +1,33 @@
-<p>
-  aboutme works!
-</p>
+<div fxLayout="column" fxFlexFill fxLayoutGap="22px" fxLayoutAlign="start center">
+  <img class="circle" src="/assets/profile-picture.jpg" alt="Profile Picture" />
+  <section>
+    <h1>Who am I?</h1>
+    <p>
+      Hi there! I am a <strong>full-stack web developer</strong> passionate about UI/UX and 
+      API-driven technology. I am currently a fourth-year software engineering student (graduating by the end of 2018) from Monash University.
+    </p>
+  </section>
+  <section>
+    <h1>My Skills</h1>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="22px">
+      <div class="card" fxFlex>
+        <img class="small" src="/assets/icons/cogs-solid.svg"/>
+        <h2>Microservice/API Development</h2>
+        <p>Accelerate your business's growth by connecting your digital assets through APIs.</p>
+      </div>
+      <div class="card" fxFlex>
+        <img class="small" src="/assets/icons/desktop-solid.svg"/>
+        <h2>Front-end Web Development</h2>
+        <p>Impress your user with stunning human-centred design.</p>
+      </div>
+      <div class="card" fxFlex>
+        <img class="small" src="/assets/icons/cloud-solid.svg"/>
+        <h2>Cloud-Driven Development</h2>
+        <p>Leverage the power of modern cloud providers in order to deliver cost-efficient cutting-edge solutions.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <button class="primary" routerLink="/portfolio">View my portfolio</button>
+  </section>
+</div>

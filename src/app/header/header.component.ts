@@ -7,6 +7,7 @@ import {
   transition
  } from '@angular/animations';
 import { SiteNavService } from '../common/service/sitenav.service';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,13 +17,11 @@ import { SiteNavService } from '../common/service/sitenav.service';
     trigger('collapse', [
       state('active', style({
         opacity: '1',
-        display: 'block',
-        transform: 'translate3d(0, 0, 0)'
+        display: 'block'
       })),
       state('inactive', style({
         opacity: '0',
-        display: 'none',
-        transform: 'translate3d(0, 100%, 0)'
+        display: 'none'
       })),
       transition('active => inactive', animate('100ms ease-out')),
       transition('inactive => active', animate('200ms ease-in'))
@@ -33,7 +32,14 @@ export class HeaderComponent implements OnInit {
   show: boolean;
   collapse: string;
   navItems: NavItems[];
-  constructor(private sitenavService: SiteNavService) { }
+  constructor(private sitenavService: SiteNavService, private router: Router) {
+    this.router.events.forEach((event) => {
+      if (event instanceof NavigationEnd) {
+        this.collapse = 'inactive';
+        document.body.scrollTo(0, 0);
+      }
+    });
+  }
 
   ngOnInit() {
     this.collapse = 'inactive';

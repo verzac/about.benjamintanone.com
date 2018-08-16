@@ -8,7 +8,8 @@ export class SiteNavService {
         // TODO: call an API to make it dynamic
         let output: NavItems[] = [
             {href: '/home', name: 'home'},
-            {href: '/about', name: 'about me'}
+            {href: '/about', name: 'about me'},
+            {href: '/portfolio', name: 'portfolio' }
         ]; 
         return output;
     }
