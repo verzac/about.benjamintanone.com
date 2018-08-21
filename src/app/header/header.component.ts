@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit {
     this.router.events.forEach((event) => {
       if (event instanceof NavigationEnd) {
         this.collapse = 'inactive';
-        document.body.scrollTo(0, 0);
+        document.querySelector("html").scrollIntoView({behavior: 'smooth', block: 'center'});
       }
     });
   }

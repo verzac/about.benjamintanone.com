@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutesModule } from './app.routes';
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     HeaderComponent,
     HomeComponent,
     AboutmeComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
