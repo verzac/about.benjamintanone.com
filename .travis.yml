@@ -22,3 +22,4 @@ deploy:
   bucket: about.benjamintanone.com
   skip_cleanup: true
   local_dir: dist
+  region: ap-southeast-2
