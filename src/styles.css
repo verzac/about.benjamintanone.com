@@ -8,6 +8,8 @@ body, html {
 
 h1, .subtitle {
     font-size: 1.5em;
+    letter-spacing: 2px;
+    font-weight: 600;
 }
 
 .title {
@@ -17,15 +19,16 @@ h1, .subtitle {
 h2 {
     font-size: 1.2em;
 }
-
+/*links*/
 a {
     text-decoration: none;
-    color: gray;
+    color: black;
+    opacity: 0.5;
     transition: all 0.5s;
 }
 
 a:hover, a.active {
-    color: black;
+    opacity: 1;
 }
 
 /*buttons*/
