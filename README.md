@@ -1,3 +1,12 @@
+
+[![Build Status](https://travis-ci.org/verzac/about.benjamintanone.com.svg?branch=master)](https://travis-ci.org/verzac/about.benjamintanone.com)
+# about.benjamintanone.com
+This project is developed to be my personal website. The app is deployed on: [https://about.benjamintanone.com](https://about.benjamintanone.com)
+
+# Misc Tech Info
+S3 + CloudFront
+
+# Angular stuffs
 # About.Benjamintanone.Com
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
