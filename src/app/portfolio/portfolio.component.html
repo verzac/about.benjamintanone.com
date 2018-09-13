@@ -1,16 +1,18 @@
-<div fxLayout="column" fxLayoutGap="22px">
+<div fxLayout="column" fxLayoutGap="22px" fxLayoutAlign="center center">
   <h1>
     My Portfolio and Previous Works
   </h1>
-  <div fxLayout="row wrap" fxLayoutAlign="center center">
-    <a class="portfolio-card" target="_blank" href="https://auspost.com.au/developers" ngClass.xs="clear" fxFlex="1 1 256px">
-      <img class="less-clear" src="/assets/devportal.jpg">
-      <div class="text-container">AusPost Developer Portal</div>
-    </a>
-    <a class="portfolio-card" target="_blank" href="http://monashseed.org" fxFlex="1 1 256px" ngClass.xs="clear">
-      <img class="less-clear" src="/assets/SEED-Logo1.png">
-      <div class="text-container">Monash SEED</div>
+  <div *ngIf="!hasErred && (portfolios == null)" class="loading-bar-container">
+    Loading...
+  </div>
+  <div *ngIf="hasErred">
+    Whoops, something went wrong here!
+  </div>
+  <div class="portfolio-container" [ngClass]="portfolios != null ? 'loaded' : null" fxLayout="row wrap" fxLayoutAlign="center center">
+    <a class="portfolio-card" *ngFor="let portfolio of portfolios" target="_blank" href="{{ portfolio.external_link }}" ngClass.xs="clear"
+      fxFlex="1 1">
+      <img class="less-clear" src="{{ portfolio.thumb_img_src }}">
+      <div class="text-container">{{ portfolio.name }}</div>
     </a>
   </div>
-
 </div>

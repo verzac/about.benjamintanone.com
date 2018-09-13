@@ -4,6 +4,8 @@
     box-shadow: 0 4px 8px 0 #999999;
     opacity: 1;
     margin: 11px;
+    max-height: 256px;
+    max-width: 256px;
 }
 
 .portfolio-card .text-container {
