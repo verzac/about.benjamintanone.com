@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { config } from '../config/config'
 import { Observable } from "rxjs";
 import { Portfolio } from "../interface/portfolio.interface";
+import { environment } from '../../../environments/environment';
 
 @Injectable(
     {providedIn: 'root'}
 )
 export class PortfolioService {
-    portfolioUrl: string = config.portfolioUrl;
+    portfolioUrl: string = environment.portfolioUrl;
     constructor(private http: HttpClient) {
         
     }
