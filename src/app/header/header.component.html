@@ -1,13 +1,15 @@
 <div class="nav-header" fxLayout="row" fxLayout.xs="column">
   <!--icon-->
   <div class="header-icon-container" fxLayout fxLayout.xs="column" fxLayoutAlign="start">
-    <img class="header-icon" src="/assets/bt-logo.png">
+    <a class="clear" routerLink="/">
+      <img class="header-icon" src="/assets/bt-logo.png">
+    </a>
   </div>
   <!--main nav-->
-  <div fxLayout fxLayout.xs="column" fxFlex="100%" fxLayoutAlign="end" fxLayoutGap="0" fxHide.xs="true">
+  <div fxLayout="row" fxFlex="100%" fxLayoutAlign="end center" fxHide.xs="true">
     <div class="nav-item" *ngFor="let item of navItems">
       <a routerLink="{{ item.href }}" routerLinkActive="active">
-        <h1>{{ item.name }}</h1>
+        {{ item.name }}
       </a>
     </div>
   </div>
@@ -19,7 +21,7 @@
     <div fxLayout="column" fxLayoutAlign="center" [@collapse]="collapse">
       <div class="nav-item" *ngFor="let item of navItems">
         <a routerLink="{{ item.href }}" routerLinkActive="active">
-          <h1>{{ item.name }}</h1>
+          {{ item.name }}
         </a>
       </div>
     </div>

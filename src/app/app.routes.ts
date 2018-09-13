@@ -8,7 +8,7 @@ export const router: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutmeComponent },
-    { path: 'portfolio', redirectTo: '404' }, // not done
+    { path: 'portfolio', component: PortfolioComponent }, // not done
     { path: '404', component: NotfoundComponent}, // 404 page
     { path: '**', redirectTo: '404'}
 ];

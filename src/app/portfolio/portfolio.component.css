@@ -1,0 +1,28 @@
+.portfolio-card {
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 #999999;
+    opacity: 1;
+    margin: 11px;
+    max-height: 256px;
+    max-width: 256px;
+}
+
+.portfolio-card .text-container {
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+}
+
+.portfolio-card img {
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.less-clear {
+    opacity: 0.5;
+}
