@@ -8,6 +8,7 @@ import {
  } from '@angular/animations';
 import { SiteNavService } from '../common/service/sitenav.service';
 import { Router, NavigationEnd } from '@angular/router';
+import { NavItems } from '../common/interface/nav_items.interface';
 
 @Component({
   selector: 'app-header',

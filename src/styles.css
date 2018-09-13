@@ -17,15 +17,16 @@ h1, .subtitle {
 h2 {
     font-size: 1.2em;
 }
-
+/*links*/
 a {
     text-decoration: none;
-    color: gray;
+    color: black;
+    opacity: 0.5;
     transition: all 0.5s;
 }
 
-a:hover, a.active {
-    color: black;
+a:hover, a.active, a.clear {
+    opacity: 1;
 }
 
 /*buttons*/
@@ -63,4 +64,16 @@ img.circle {
 img.small {
     height: 64px;
     width: 64px;
+}
+
+.loading-bar-container {
+    animation: loading-bar 1s ease infinite alternate;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 2px solid black;
+}
+
+@keyframes loading-bar {
+    0% { padding-right: 11px; padding-left: 11px;}
+    100% { padding-right: 88px; padding-left: 88px;}
 }
