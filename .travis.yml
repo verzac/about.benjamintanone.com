@@ -7,19 +7,36 @@ node_js:
 branches:
   only:
     - master
+    - staging
 before_script:
   - npm install -g @angular/cli
 script:
   - ng build --prod --aot
 deploy:
-  provider: s3
-  access_key_id:
-    secure:
-      mQ+VL/PyDeCJmXR5KbfEK51OQ4KeFgAf3IHzNGw7SXkphXMQNK4TXpBTwHn1+ZmQ8gRespVo/viBI4OjtcDPrtI83EmvxAe1taKvjiw0IiDGXY4w9sNt2S655/pgZWK/aUqoY2iruQfFIluIO698VER9PNsscWZc587kilurePodPIOwZVZAwrKz+sBwkkqwuEcT8JUFx802dciBJs1pWP/a0Fny8yUqALiWaKMF3KUSb+0ZP2Au65hXqC8SsZfL+NWlXI1aSlKyND0CXL26rGzeLgE8GF36H0hflccnI/8iq7DpyNxaMiuxP9UEUUIjKeo/tgZg+kMaTjrPr7fn4AecIm+T6IIcBoshR2Nxvo8Ktf54qQPNXn9ZgZSd9HFUaWfICWjcOlTAkf4nHJCDQ/GwU61ESjuGUolOSEf7ucNpE2MtTYcELvZzX/G32bL+i+aAsgxWFSPHq4Iius+Nkq9d2rVKyJy7/UQftpcq0pSmtgdus4KVUtuZel2+jZKkGZrTMQGV+QOYvXWoee/68pPIswy9U60zJf274dcYEKFHthtqzNnnxR5M50uZ5z/C8zg9ACjj7AGt/4uPdS+/WIAfo0kiXSQh5bjX/FPfKm86239l7m5TdG1oklJDb20jYWNC1xd/i3dIsjiX8vAnL6lw7DdOqbA6sumviprZYKo=
-  secret_access_key:
-    secure:
-      Oen8Cbl2HT1PVjdtCMA0MbjNQjkuIF1Y+Cc8ntAgC4uS5qGDQWyIH7MY7hoTVmPH+Ug+n+k8RRHuarGv1nTKkwRtBJV7sDJ2bMHAY1Hst65l6I51PrmRShVR4fobCXgv14GriGOtOQDMDCbQ2BubGBBNG45lA6v0hLGQPWjYuioI2SSq4gmDQ7JWwWskj3R/RS+PHEzhkFeIxr1qUiA8l9NhfXKBZ6ou6TH9q4BSnDg2SJrlyVIZno0cAdvHUfRGGjsy6DaM5KM8QS+zVGa2yO8SZYqLb4IZsA1U/KtwSfHlYL5WNweBe1IwN1f/6UGLeISY6rer4365K9/9KMmER66+XtlT39bAUwSX9iMvYFifJVwqfIt+ZyHYuMt2NflhHjMq8qY0z6318uBZP60t9cIVDxMykDmfozjQpP4yCy+G7L1O8hd/0HlODxvXGQi1at2eOT7simhPl41Lx5mMsQKiLaUNVcr2BZ+SSerbfTYjIW7lsZh5RWnKEBIccg+lGWFvMA4zeYp0TVwgJ4SIS66dKDrz60J+6wr34g8QU/uU7F30VNnH6VgdMsQNlyUlEtcMBYUmInxZrjd2yvseJqEJZXnZivtp0J7pSpVuVOzhdq6wBEoaTJNlbx5bRbbvIklx0yCbtOYnOFPVbc8/4NEpLsmMVFAjkC0hcpMYMlE=
-  bucket: about.benjamintanone.com
-  skip_cleanup: true
-  local_dir: dist
-  region: ap-southeast-2
+  - provider: s3
+    access_key_id:
+      secure:
+        mQ+VL/PyDeCJmXR5KbfEK51OQ4KeFgAf3IHzNGw7SXkphXMQNK4TXpBTwHn1+ZmQ8gRespVo/viBI4OjtcDPrtI83EmvxAe1taKvjiw0IiDGXY4w9sNt2S655/pgZWK/aUqoY2iruQfFIluIO698VER9PNsscWZc587kilurePodPIOwZVZAwrKz+sBwkkqwuEcT8JUFx802dciBJs1pWP/a0Fny8yUqALiWaKMF3KUSb+0ZP2Au65hXqC8SsZfL+NWlXI1aSlKyND0CXL26rGzeLgE8GF36H0hflccnI/8iq7DpyNxaMiuxP9UEUUIjKeo/tgZg+kMaTjrPr7fn4AecIm+T6IIcBoshR2Nxvo8Ktf54qQPNXn9ZgZSd9HFUaWfICWjcOlTAkf4nHJCDQ/GwU61ESjuGUolOSEf7ucNpE2MtTYcELvZzX/G32bL+i+aAsgxWFSPHq4Iius+Nkq9d2rVKyJy7/UQftpcq0pSmtgdus4KVUtuZel2+jZKkGZrTMQGV+QOYvXWoee/68pPIswy9U60zJf274dcYEKFHthtqzNnnxR5M50uZ5z/C8zg9ACjj7AGt/4uPdS+/WIAfo0kiXSQh5bjX/FPfKm86239l7m5TdG1oklJDb20jYWNC1xd/i3dIsjiX8vAnL6lw7DdOqbA6sumviprZYKo=
+    secret_access_key:
+      secure:
+        Oen8Cbl2HT1PVjdtCMA0MbjNQjkuIF1Y+Cc8ntAgC4uS5qGDQWyIH7MY7hoTVmPH+Ug+n+k8RRHuarGv1nTKkwRtBJV7sDJ2bMHAY1Hst65l6I51PrmRShVR4fobCXgv14GriGOtOQDMDCbQ2BubGBBNG45lA6v0hLGQPWjYuioI2SSq4gmDQ7JWwWskj3R/RS+PHEzhkFeIxr1qUiA8l9NhfXKBZ6ou6TH9q4BSnDg2SJrlyVIZno0cAdvHUfRGGjsy6DaM5KM8QS+zVGa2yO8SZYqLb4IZsA1U/KtwSfHlYL5WNweBe1IwN1f/6UGLeISY6rer4365K9/9KMmER66+XtlT39bAUwSX9iMvYFifJVwqfIt+ZyHYuMt2NflhHjMq8qY0z6318uBZP60t9cIVDxMykDmfozjQpP4yCy+G7L1O8hd/0HlODxvXGQi1at2eOT7simhPl41Lx5mMsQKiLaUNVcr2BZ+SSerbfTYjIW7lsZh5RWnKEBIccg+lGWFvMA4zeYp0TVwgJ4SIS66dKDrz60J+6wr34g8QU/uU7F30VNnH6VgdMsQNlyUlEtcMBYUmInxZrjd2yvseJqEJZXnZivtp0J7pSpVuVOzhdq6wBEoaTJNlbx5bRbbvIklx0yCbtOYnOFPVbc8/4NEpLsmMVFAjkC0hcpMYMlE=
+    bucket: about.benjamintanone.com
+    skip_cleanup: true
+    local_dir: dist
+    region: ap-southeast-2
+    on:
+      branch: master
+  - provider: s3
+    access_key_id:
+      secure:
+        mQ+VL/PyDeCJmXR5KbfEK51OQ4KeFgAf3IHzNGw7SXkphXMQNK4TXpBTwHn1+ZmQ8gRespVo/viBI4OjtcDPrtI83EmvxAe1taKvjiw0IiDGXY4w9sNt2S655/pgZWK/aUqoY2iruQfFIluIO698VER9PNsscWZc587kilurePodPIOwZVZAwrKz+sBwkkqwuEcT8JUFx802dciBJs1pWP/a0Fny8yUqALiWaKMF3KUSb+0ZP2Au65hXqC8SsZfL+NWlXI1aSlKyND0CXL26rGzeLgE8GF36H0hflccnI/8iq7DpyNxaMiuxP9UEUUIjKeo/tgZg+kMaTjrPr7fn4AecIm+T6IIcBoshR2Nxvo8Ktf54qQPNXn9ZgZSd9HFUaWfICWjcOlTAkf4nHJCDQ/GwU61ESjuGUolOSEf7ucNpE2MtTYcELvZzX/G32bL+i+aAsgxWFSPHq4Iius+Nkq9d2rVKyJy7/UQftpcq0pSmtgdus4KVUtuZel2+jZKkGZrTMQGV+QOYvXWoee/68pPIswy9U60zJf274dcYEKFHthtqzNnnxR5M50uZ5z/C8zg9ACjj7AGt/4uPdS+/WIAfo0kiXSQh5bjX/FPfKm86239l7m5TdG1oklJDb20jYWNC1xd/i3dIsjiX8vAnL6lw7DdOqbA6sumviprZYKo=
+    secret_access_key:
+      secure:
+        Oen8Cbl2HT1PVjdtCMA0MbjNQjkuIF1Y+Cc8ntAgC4uS5qGDQWyIH7MY7hoTVmPH+Ug+n+k8RRHuarGv1nTKkwRtBJV7sDJ2bMHAY1Hst65l6I51PrmRShVR4fobCXgv14GriGOtOQDMDCbQ2BubGBBNG45lA6v0hLGQPWjYuioI2SSq4gmDQ7JWwWskj3R/RS+PHEzhkFeIxr1qUiA8l9NhfXKBZ6ou6TH9q4BSnDg2SJrlyVIZno0cAdvHUfRGGjsy6DaM5KM8QS+zVGa2yO8SZYqLb4IZsA1U/KtwSfHlYL5WNweBe1IwN1f/6UGLeISY6rer4365K9/9KMmER66+XtlT39bAUwSX9iMvYFifJVwqfIt+ZyHYuMt2NflhHjMq8qY0z6318uBZP60t9cIVDxMykDmfozjQpP4yCy+G7L1O8hd/0HlODxvXGQi1at2eOT7simhPl41Lx5mMsQKiLaUNVcr2BZ+SSerbfTYjIW7lsZh5RWnKEBIccg+lGWFvMA4zeYp0TVwgJ4SIS66dKDrz60J+6wr34g8QU/uU7F30VNnH6VgdMsQNlyUlEtcMBYUmInxZrjd2yvseJqEJZXnZivtp0J7pSpVuVOzhdq6wBEoaTJNlbx5bRbbvIklx0yCbtOYnOFPVbc8/4NEpLsmMVFAjkC0hcpMYMlE=
+    bucket: staging.about.benjamintanone.com
+    skip_cleanup: true
+    local_dir: dist
+    region: ap-southeast-2
+    on:
+      branch: staging
+  
