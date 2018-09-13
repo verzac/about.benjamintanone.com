@@ -27,7 +27,7 @@ a {
     transition: all 0.5s;
 }
 
-a:hover, a.active {
+a:hover, a.active, a.clear {
     opacity: 1;
 }
 
@@ -66,4 +66,16 @@ img.circle {
 img.small {
     height: 64px;
     width: 64px;
+}
+
+.loading-bar-container {
+    animation: loading-bar 1s ease infinite alternate;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 2px solid black;
+}
+
+@keyframes loading-bar {
+    0% { padding-right: 11px; padding-left: 11px;}
+    100% { padding-right: 88px; padding-left: 88px;}
 }
