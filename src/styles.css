@@ -32,13 +32,13 @@ a:hover, a.active, a.clear {
 /*buttons*/
 button {
     outline: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 button.primary {
     border: 1.5px solid black;
     padding: 11px;
     background-color: transparent;
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.5em;
     margin-top: 22px;
     margin-bottom: 22px;
@@ -54,6 +54,17 @@ button.primary:hover {
 
 button.primary::after {
     content: " >>";
+}
+
+button.primary:disabled {
+    background-color: #c9c9c9c9;
+    border-color: #cccccc;
+}
+
+button.primary:enabled:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
 }
 
 img.circle {
@@ -83,10 +94,19 @@ img.small {
     margin: auto;
 }
 
-.std-form-container div {
+.std-form-container .form-input-container {
     width: 100%;
 }
 
-.std-form-container div textarea {
+.std-form-container .form-input-container-group {
+    width: 100%;
+}
+
+.std-form-container .form-input-container textarea {
     height: 10em;
+}
+
+.help-block {
+    color: red;
+    font-size: 0.7em;
 }
