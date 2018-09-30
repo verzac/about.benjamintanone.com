@@ -9,7 +9,8 @@ export class SiteNavService {
         let output: NavItems[] = [
             {href: '/home', name: 'home'},
             {href: '/about', name: 'about me'},
-            {href: '/portfolio', name: 'portfolio' }
+            {href: '/portfolio', name: 'portfolio' },
+            {href: '/contact-me', name: 'contact me'}
         ]; 
         return output;
     }

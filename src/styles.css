@@ -77,3 +77,16 @@ img.small {
     0% { padding-right: 11px; padding-left: 11px;}
     100% { padding-right: 88px; padding-left: 88px;}
 }
+
+.std-form-container {
+    width: 61%;
+    margin: auto;
+}
+
+.std-form-container div {
+    width: 100%;
+}
+
+.std-form-container div textarea {
+    height: 10em;
+}

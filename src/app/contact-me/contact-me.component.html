@@ -1,0 +1,15 @@
+<h1>
+  Get in touch
+</h1>
+<form fxLayout="column" fxLayoutGap="11px" fxLayoutAlign="center center" [formGroup]="form" fxLayout="column" class="std-form-container">
+  <div fxLayout="column">
+    <label for="emailInput">
+      Your Email:
+    </label>
+    <input id="emailInput" type="text" formControlName="email">
+  </div>
+  <div fxLayout="column">
+    <label for="messageTextarea">Your Message:</label>
+    <textarea type="text" id="messageTextarea" formControlName="message"></textarea>
+  </div>
+</form>
