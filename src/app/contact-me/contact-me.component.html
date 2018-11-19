@@ -1,7 +1,7 @@
 <h1>
   Get in touch
 </h1>
-<form fxLayout="column" fxLayoutGap="11px" fxLayoutAlign="center center" [formGroup]="form" fxLayout="column" class="std-form-container">
+<form fxLayout="column" (ngSubmit)="onSubmit(form.value)" fxLayoutGap="11px" fxLayoutAlign="center center" [formGroup]="form" fxLayout="column" class="std-form-container">
   <div fxLayout="row" class="form-input-container-group" fxLayout.xs="column" fxLayoutGap="11px">
     <div class="form-input-container" fxLayout="column">
       <label for="firstNameInput">
@@ -17,19 +17,19 @@
         </span>
       </div>
     </div>
-  </div>
-  <div class="form-input-container" fxLayout="column">
-    <label for="lastNameInput">
-      Last Name:
-    </label>
-    <input id="lastNameInput" type="text" formControlName="lastName">
-    <div *ngIf="lastName.touched && lastName.errors" class="help-block">
-      <span *ngIf="lastName.errors.required">
-        This field is required.
-      </span>
-      <span *ngIf="lastName.errors.maxlength">
-        The input is too long.
-      </span>
+    <div class="form-input-container" fxLayout="column">
+      <label for="lastNameInput">
+        Last Name:
+      </label>
+      <input id="lastNameInput" type="text" formControlName="lastName">
+      <div *ngIf="lastName.touched && lastName.errors" class="help-block">
+        <span *ngIf="lastName.errors.required">
+          This field is required.
+        </span>
+        <span *ngIf="lastName.errors.maxlength">
+          The input is too long.
+        </span>
+      </div>
     </div>
   </div>
   <div class="form-input-container" fxLayout="column">

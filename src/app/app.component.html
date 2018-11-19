@@ -4,10 +4,9 @@
         <app-header></app-header>
     </header>
     <div fxFlex="0 1 auto">
-        <div class="notification-banner" [ngClass]="this.notificationString ? 'visible' : null">{{ this.notificationString }}</div>
+        <app-notification></app-notification>
     </div>
     <div fxFlex="1 0 auto" fxFlexFill>
-        <button (click)="this.notificationService.setNotification('sup')">test</button>
         <router-outlet></router-outlet>
     </div>
 </div>
