@@ -67,6 +67,17 @@ button.primary:enabled:hover {
     color: white;
 }
 
+button.notification-btn {
+    border: 1.5px solid black;
+    padding: 11px;
+    background-color: transparent;
+    font-size: 1.5em;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
 img.circle {
     border: 2px solid gray;
     border-radius: 50%;
