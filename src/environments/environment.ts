@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   portfolioUrl: 'https://ben-personal-website.firebaseio.com/test/portfolio.json',
-  aboutApiUrl: 'https://o85dbinjig.execute-api.ap-southeast-2.amazonaws.com/prod'
+  aboutApiUrl: 'http://localhost:8080'
 };

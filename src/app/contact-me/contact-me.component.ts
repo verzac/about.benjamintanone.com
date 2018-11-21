@@ -12,6 +12,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class ContactMeComponent implements OnInit {
 
+  busySending: boolean = false;
+
   constructor(private aboutApiService: AboutApiService, private notificationService: NotificationService) { }
 
   form = new FormGroup({
@@ -46,8 +48,10 @@ export class ContactMeComponent implements OnInit {
   }
 
   onSubmit(contactMeForm: ContactMeForm): void {
+    this.busySending = true;
     this.aboutApiService.submitContactMeForm(contactMeForm)
     .subscribe(() => {
+      this.busySending = false;
       this.notificationService.setNotification('Please check your e-mail to confirm submission.');
     }, (error: HttpErrorResponse) => {
       throw error;

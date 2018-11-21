@@ -25,7 +25,7 @@ export class NotificationComponent implements OnInit {
     this.notificationString = notification;
     this.timer = setTimeout(() => {
       this.notificationString = null;
-    }, 5000);
+    }, 10000);
   }
 
 }
