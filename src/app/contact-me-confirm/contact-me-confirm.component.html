@@ -1,10 +1,11 @@
-<div *ngIf="state == State.DONE">
+<div *ngIf="!busy && !error">
     <div class="title">Thank You!</div>
     <div class="subtitle">Your form has been sent.</div>
     <p>I will get in touch with you in 3 business days. Have a nice day!</p>
 </div>
-<div *ngIf="state == State.ERROR">
+<div *ngIf="error">
     <div class="title">Whoops!</div>
     <div class="subtitle">Something has happened!</div>
-    <p *ngIf></p>
+    <p>Error Status: {{ error.status }}</p>
+    <p>{{ error.error.message }}</p>
 </div>

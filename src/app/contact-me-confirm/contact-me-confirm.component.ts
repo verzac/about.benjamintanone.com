@@ -13,20 +13,23 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class ContactMeConfirmComponent implements OnInit {
 
-  private state: State = State.PROCESSING;
+  private busy = true;
+  private error: HttpErrorResponse;
   private errorStatus: number;
   constructor(private route: ActivatedRoute, private aboutApiService: AboutApiService) { }
 
   ngOnInit() {
     let challengeId: string = this.route.snapshot.paramMap.get('challengeId');
+    this.sendConfirmationChallenge(challengeId);
   }
 
   sendConfirmationChallenge(challengeId: string) {
     this.aboutApiService.submitContactMeFormConfirmation(challengeId).subscribe(() => {
-      this.state = State.DONE;
+      this.busy = false;
+      console.log("Successfully submitted contact form.")
     }, (error: HttpErrorResponse) => {
-      this.state = State.ERROR;
-      this.errorStatus = error.status;
+      this.error = error;
+      this.busy = false;
       throw error;
     });
   }

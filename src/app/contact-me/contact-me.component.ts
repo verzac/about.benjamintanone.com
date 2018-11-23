@@ -14,7 +14,7 @@ import { ReadKeyExpr } from '@angular/compiler';
 })
 export class ContactMeComponent implements OnInit {
 
-  private state: State = State.READY;
+  private busy = false;
 
   constructor(private aboutApiService: AboutApiService, private notificationService: NotificationService) { }
 
@@ -50,13 +50,13 @@ export class ContactMeComponent implements OnInit {
   }
 
   onSubmit(contactMeForm: ContactMeForm): void {
-    this.state = State.PROCESSING;
+    this.busy = true;
     this.aboutApiService.submitContactMeForm(contactMeForm)
     .subscribe(() => {
-      this.state = State.READY;
+      this.busy = false;
       this.notificationService.setNotification('Please check your e-mail to confirm submission.');
     }, (error: HttpErrorResponse) => {
-      this.state = State.ERROR;
+      this.busy = false;
       this.notificationService.setNotification('Cannot submit contact form. Please try again later.');
       throw error;
     });
