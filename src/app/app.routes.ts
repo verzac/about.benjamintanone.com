@@ -5,12 +5,16 @@ import { AboutmeComponent } from './aboutme/aboutme.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
+import { ContactMeConfirmComponent } from './contact-me-confirm/contact-me-confirm.component';
 export const router: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutmeComponent },
     { path: 'portfolio', component: PortfolioComponent },
-    { path: 'contact-me', component: ContactMeComponent },
+    { path: 'contact-me', children: [
+        { path: '', component: ContactMeComponent},
+        { path: 'confirm/:challengeId', component: ContactMeConfirmComponent }
+    ] },
     { path: '404', component: NotfoundComponent}, // 404 page
     { path: '**', redirectTo: '404'}
 ];

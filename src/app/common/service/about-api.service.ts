@@ -9,8 +9,10 @@ import { ContactMeForm } from "../../contact-me/contact-me-form.interface";
     {providedIn: 'root'}
 )
 export class AboutApiService {
-    aboutApiUrl: string = environment.aboutApiUrl;
-    contactMeUrl: string = this.aboutApiUrl + '/contact';
+    private aboutApiUrl: string = environment.aboutApiUrl;
+    private contactMeUrl: string = this.aboutApiUrl + '/contact';
+    private confirmContactMeUrl: string = this.aboutApiUrl + '/contact/confirm';
+
     constructor(private http: HttpClient) {
         
     }
@@ -18,5 +20,9 @@ export class AboutApiService {
     submitContactMeForm(form: ContactMeForm): Observable<any> {
         let output: Portfolio[] = [];
         return this.http.post(this.contactMeUrl, form);
+    }
+
+    submitContactMeFormConfirmation(confirmationChallenge: string): Observable<any> {
+        return this.http.post(this.confirmContactMeUrl, {challenge: confirmationChallenge});
     }
 }

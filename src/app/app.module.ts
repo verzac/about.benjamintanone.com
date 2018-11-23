@@ -15,6 +15,7 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotificationComponent } from './notification/notification.component';
+import { ContactMeConfirmComponent } from './contact-me-confirm/contact-me-confirm.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NotificationComponent } from './notification/notification.component';
     PortfolioComponent,
     ContactMeComponent,
     NotfoundComponent,
-    NotificationComponent
+    NotificationComponent,
+    ContactMeConfirmComponent
   ],
   imports: [
     BrowserModule,

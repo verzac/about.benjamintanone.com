@@ -73,6 +73,6 @@
     </div>
   </div>
   <div>
-    <button type="submit" class="primary" [disabled]="!form.valid">Submit</button>
+    <button type="submit" class="primary" [disabled]="!form.valid || state == State.PROCESSING">Submit</button>
   </div>
 </form>

@@ -4,6 +4,8 @@ import { ContactMeForm } from './contact-me-form.interface';
 import { AboutApiService } from '../common/service/about-api.service';
 import { NotificationService } from '../common/service/notification.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { State } from '../common/enum/state.enum';
+import { ReadKeyExpr } from '@angular/compiler';
 
 @Component({
   selector: 'app-contact-me',
@@ -12,7 +14,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class ContactMeComponent implements OnInit {
 
-  busySending: boolean = false;
+  private state: State = State.READY;
 
   constructor(private aboutApiService: AboutApiService, private notificationService: NotificationService) { }
 
@@ -48,12 +50,14 @@ export class ContactMeComponent implements OnInit {
   }
 
   onSubmit(contactMeForm: ContactMeForm): void {
-    this.busySending = true;
+    this.state = State.PROCESSING;
     this.aboutApiService.submitContactMeForm(contactMeForm)
     .subscribe(() => {
-      this.busySending = false;
+      this.state = State.READY;
       this.notificationService.setNotification('Please check your e-mail to confirm submission.');
     }, (error: HttpErrorResponse) => {
+      this.state = State.ERROR;
+      this.notificationService.setNotification('Cannot submit contact form. Please try again later.');
       throw error;
     });
   }

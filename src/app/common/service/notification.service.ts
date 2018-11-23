@@ -4,8 +4,8 @@ import { Observable, observable } from "rxjs";
     {providedIn: 'root'}
 )
 export class NotificationService {
-    currentNotification: string;
-    listenerCallback: (currentNotification: string) => void;
+    private currentNotification: string;
+    private listenerCallback: (currentNotification: string) => void;
 
     listen(callback: (currentNotification: string) => void): void {
         if (this.listenerCallback) {
