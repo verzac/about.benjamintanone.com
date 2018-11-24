@@ -43,3 +43,10 @@ img.header-icon {
 a.active {
     border-bottom: 2px solid black;
 }
+
+.notification-banner {
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 22px;
+    margin: auto;
+}
