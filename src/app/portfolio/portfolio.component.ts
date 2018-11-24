@@ -32,7 +32,7 @@ export class PortfolioComponent implements OnInit {
         if (error.error instanceof ErrorEvent) {
           console.error('Client-side error:', error.message);
         } else {
-          console.error('${error.status}: ${error.message}');
+          console.error(`${error.status}: ${error.message}`);
         }
       });
   }

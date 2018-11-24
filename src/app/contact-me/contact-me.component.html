@@ -1,0 +1,78 @@
+<h1>
+  Get in touch
+</h1>
+<form fxLayout="column" (ngSubmit)="onSubmit(form.value)" fxLayoutGap="11px" fxLayoutAlign="center center" [formGroup]="form" fxLayout="column" class="std-form-container">
+  <div fxLayout="row" class="form-input-container-group" fxLayout.xs="column" fxLayoutGap="11px">
+    <div class="form-input-container" fxLayout="column">
+      <label for="firstNameInput">
+        First Name:
+      </label>
+      <input id="firstNameInput" type="text" formControlName="firstName">
+      <div *ngIf="firstName.touched && firstName.errors" class="help-block">
+        <span *ngIf="firstName.errors.required">
+          This field is required.
+        </span>
+        <span *ngIf="firstName.errors.maxlength">
+          The input is too long.
+        </span>
+      </div>
+    </div>
+    <div class="form-input-container" fxLayout="column">
+      <label for="lastNameInput">
+        Last Name:
+      </label>
+      <input id="lastNameInput" type="text" formControlName="lastName">
+      <div *ngIf="lastName.touched && lastName.errors" class="help-block">
+        <span *ngIf="lastName.errors.required">
+          This field is required.
+        </span>
+        <span *ngIf="lastName.errors.maxlength">
+          The input is too long.
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="form-input-container" fxLayout="column">
+    <label for="emailInput">
+      Your Email:
+    </label>
+    <input id="emailInput" type="text" formControlName="email">
+    <div *ngIf="email.touched && email.errors" class="help-block">
+      <span *ngIf="email.errors.required">
+        This field is required.
+      </span>
+      <span *ngIf="email.errors.email">
+        This is not a valid email address.
+      </span>
+    </div>
+  </div>
+  <div class="form-input-container" fxLayout="column">
+    <label for="messageTextarea">Your Message:</label>
+    <textarea type="text" id="messageTextarea" formControlName="message"></textarea>
+    <div *ngIf="message.touched && message.errors" class="help-block">
+      <span *ngIf="message.errors.required">
+        This field is required.
+      </span>
+      <span *ngIf="message.errors.maxlength">
+        The input is too long.
+      </span>
+    </div>
+  </div>
+  <div class="form-input-container" fxLayout="column">
+    <label for="reasonSelect">Your Reason for Contacting:</label>
+    <select id="reasonSelect" value="" placeholder="" formControlName="reason">
+      <option value="" disabled selected hidden></option>
+      <option value="general">General inquiry</option>
+      <option value="employment">Employment</option>
+      <option value="business-inquiry">Contracting/General Business Inquiry</option>
+    </select>
+    <div *ngIf="reason.touched && reason.errors" class="help-block">
+      <span *ngIf="reason.errors.required">
+        This field is required.
+      </span>
+    </div>
+  </div>
+  <div>
+    <button type="submit" class="primary" [disabled]="!form.valid || busy == true">Submit</button>
+  </div>
+</form>

@@ -1,8 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="site-container"fxLayout="column">
-    <header fxFlex="0 1 auto" fxFlexFill>
+    <header fxFlex="0 1 auto">
         <app-header></app-header>
     </header>
+    <div fxFlex="0 1 auto">
+        <app-notification></app-notification>
+    </div>
     <div fxFlex="1 0 auto" fxFlexFill>
         <router-outlet></router-outlet>
     </div>
