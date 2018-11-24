@@ -13,7 +13,7 @@ import { ReadKeyExpr } from '@angular/compiler';
 })
 export class ContactMeComponent implements OnInit {
 
-  private busy = false;
+  busy = false;
 
   constructor(private aboutApiService: AboutApiService, private notificationService: NotificationService) { }
 

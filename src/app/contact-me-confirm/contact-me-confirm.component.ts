@@ -12,9 +12,8 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class ContactMeConfirmComponent implements OnInit {
 
-  private busy = true;
-  private error: HttpErrorResponse;
-  private errorStatus: number;
+  busy = true;
+  error: HttpErrorResponse;
   constructor(private route: ActivatedRoute, private aboutApiService: AboutApiService) { }
 
   ngOnInit() {
