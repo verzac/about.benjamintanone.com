@@ -4,7 +4,6 @@ import { ContactMeForm } from './contact-me-form.interface';
 import { AboutApiService } from '../common/service/about-api.service';
 import { NotificationService } from '../common/service/notification.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { State } from '../common/enum/state.enum';
 import { ReadKeyExpr } from '@angular/compiler';
 
 @Component({

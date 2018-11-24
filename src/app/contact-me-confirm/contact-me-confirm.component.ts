@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { AboutApiService } from '../common/service/about-api.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { state } from '@angular/animations';
-import { State } from '../common/enum/state.enum';
 import { retry, catchError } from 'rxjs/operators';
 
 @Component({
