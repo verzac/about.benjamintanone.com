@@ -1,6 +1,7 @@
 <h1>
-  Get in touch
+  Get in touch with me!
 </h1>
+<h2>I will respond in 1 business day.</h2>
 <form fxLayout="column" (ngSubmit)="onSubmit(form.value)" fxLayoutGap="11px" fxLayoutAlign="center center" [formGroup]="form" fxLayout="column" class="std-form-container">
   <div fxLayout="row" class="form-input-container-group" fxLayout.xs="column" fxLayoutGap="11px">
     <div class="form-input-container" fxLayout="column">
@@ -76,3 +77,7 @@
     <button type="submit" class="primary" [disabled]="!form.valid || busy == true">Submit</button>
   </div>
 </form>
+<h1>Don't like contact forms? Feel free to send me a message through:</h1>
+<a target="_blank" href="https://www.linkedin.com/in/benjamin-tanone/">
+  <img class="small" src="/assets/icons/linkedin-brands.svg">
+</a>
