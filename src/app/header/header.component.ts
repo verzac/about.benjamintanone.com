@@ -47,10 +47,6 @@ export class HeaderComponent implements OnInit {
     this.navItems = this.sitenavService.getNavItems();
   }
 
-  getNavItems() {
-    return []
-  }
-
   toggleCollapse(collapse): string {
     collapse = collapse == 'active' ? 'inactive': 'active';
     return collapse;
