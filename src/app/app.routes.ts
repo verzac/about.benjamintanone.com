@@ -13,7 +13,7 @@ export const router: Routes = [
     { path: 'portfolio', component: PortfolioComponent },
     { path: 'contact-me', children: [
         { path: '', component: ContactMeComponent},
-        { path: 'confirm/:challengeId', component: ContactMeConfirmComponent }
+        { path: 'confirm', component: ContactMeConfirmComponent }
     ] },
     { path: '404', component: NotfoundComponent}, // 404 page
     { path: '**', redirectTo: '404'}
