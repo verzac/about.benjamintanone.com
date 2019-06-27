@@ -12,13 +12,13 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class ContactMeConfirmComponent implements OnInit {
 
-  busy = true;
+  busy = false;
   error: HttpErrorResponse;
   constructor(private route: ActivatedRoute, private aboutApiService: AboutApiService) { }
 
   ngOnInit() {
-    let challengeId: string = this.route.snapshot.paramMap.get('challengeId');
-    this.sendConfirmationChallenge(challengeId);
+    // let challengeId: string = this.route.snapshot.paramMap.get('challengeId');
+    // this.sendConfirmationChallenge(challengeId);
   }
 
   sendConfirmationChallenge(challengeId: string) {
