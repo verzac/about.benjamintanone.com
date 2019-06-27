@@ -5,6 +5,7 @@ import { AboutApiService } from '../common/service/about-api.service';
 import { NotificationService } from '../common/service/notification.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ReadKeyExpr } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-me',
@@ -15,7 +16,7 @@ export class ContactMeComponent implements OnInit {
 
   busy = false;
 
-  constructor(private aboutApiService: AboutApiService, private notificationService: NotificationService) { }
+  constructor(private aboutApiService: AboutApiService, private notificationService: NotificationService, private router: Router) { }
 
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -53,7 +54,7 @@ export class ContactMeComponent implements OnInit {
     this.aboutApiService.submitContactMeForm(contactMeForm)
     .subscribe(() => {
       this.busy = false;
-      this.notificationService.setNotification('Please check your e-mail to confirm submission.');
+      this.router.navigateByUrl('/contact-me/confirm');
     }, (error: HttpErrorResponse) => {
       this.busy = false;
       this.notificationService.setNotification('Cannot submit contact form. Please try again later.');
